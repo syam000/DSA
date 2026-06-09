@@ -2,6 +2,8 @@
 
 Playground for popular DSA problems — focused on senior engineer interview prep.
 
+> **Note:** Claude AI is only used for validating solutions and adding documentation — all problem-solving is done independently.
+
 ---
 
 ## JS Basics
