@@ -12,7 +12,7 @@ Playground for popular DSA problems — focused on senior engineer interview pre
 ## Problem List
 
 ### Arrays & Strings
-- [x] [Two Sum](./problems/01_two_sum.js)
+- [x] [Two Sum](./problems/01_two_sum.js) — One-pass hashmap. Store `target - num` → index as you iterate; check if current num is already a stored complement. O(n) time, O(n) space.
 - [ ] [Maximum Subarray (Kadane's)](./problems/02_maximum_subarray.js)
 - [ ] [Longest Substring Without Repeating Characters](./problems/03_longest_substring.js)
 - [ ] [Trapping Rain Water](./problems/04_trapping_rain_water.js)
@@ -41,5 +41,5 @@ Playground for popular DSA problems — focused on senior engineer interview pre
 
 | Status | Count |
 |--------|-------|
-| Done   | 0     |
+| Done   | 1     |
 | Total  | 12    |
