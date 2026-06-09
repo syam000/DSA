@@ -41,8 +41,37 @@
  * ─────────────────────────────────────────────────────────────
  */
 
+/**
+ * Approach: One-pass hashmap (O(n) time, O(n) space)
+ *
+ * For each element, store its complement (target - element) mapped to its index.
+ * If the current element already exists as a complement in the map, we found the pair.
+ *
+ * @param {number[]} nums
+ * @param {number} target
+ * @returns {number[]} indices of the two numbers that add up to target, or [-1,-1] if none
+ */
 function twoSum(nums, target) {
-    // TODO: implement
+    if (nums == null || nums.length == 0) {
+        return [-1, -1];
+    }
+
+    // map: complement value → index of the element that needs it
+    const seen = new Map();
+    seen.set(target - nums[0], 0);
+
+    for (let index = 1; index < nums.length; index++) {
+        const itemToCheck = nums[index];
+
+        if (seen.has(itemToCheck)) {
+            // current element is the complement someone earlier was waiting for
+            return [seen.get(itemToCheck), index];
+        }
+
+        seen.set(target - itemToCheck, index);
+    }
+
+    return [-1, -1];
 }
 
 // Test cases
