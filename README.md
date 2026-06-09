@@ -12,7 +12,7 @@ Playground for popular DSA problems — focused on senior engineer interview pre
 ## Problem List
 
 ### Arrays & Strings
-- [ ] [Two Sum](./problems/01_two_sum.js)
+- [x] [Two Sum](./problems/01_two_sum.js)
 - [ ] [Maximum Subarray (Kadane's)](./problems/02_maximum_subarray.js)
 - [ ] [Longest Substring Without Repeating Characters](./problems/03_longest_substring.js)
 - [ ] [Trapping Rain Water](./problems/04_trapping_rain_water.js)
