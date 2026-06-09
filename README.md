@@ -1,6 +1,6 @@
 # DSA
 
-Playground for popular DSA problems — focused on senior engineer interview prep.
+Playground for popular DSA problems
 
 > **Note:** Claude AI is only used for validating solutions and adding documentation — all problem-solving is done independently.
 
