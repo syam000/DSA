@@ -16,7 +16,7 @@ Playground for popular DSA problems
 ### Arrays & Strings
 - [x] [Two Sum](./problems/01_two_sum.js) — One-pass hashmap. Store `target - num` → index as you iterate; check if current num is already a stored complement. O(n) time, O(n) space.
 - [x] [Maximum Subarray (Kadane's)](./problems/02_maximum_subarray.js) — Track running sum ending at current index (extend or restart) and a separate best-so-far max. O(n) time, O(1) space.
-- [ ] [Longest Substring Without Repeating Characters](./problems/03_longest_substring.js)
+- [x] [Longest Substring Without Repeating Characters](./problems/03_longest_substring.js) — Sliding window with a Set; shrink from the left on duplicates, track the max window size. O(n) amortized time, O(min(n, charset)) space. (Includes an alternative Map-based implementation.)
 - [ ] [Trapping Rain Water](./problems/04_trapping_rain_water.js)
 
 ### Linked Lists
@@ -43,5 +43,5 @@ Playground for popular DSA problems
 
 | Status | Count |
 |--------|-------|
-| Done   | 2     |
+| Done   | 3     |
 | Total  | 12    |
