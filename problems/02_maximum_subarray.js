@@ -39,7 +39,26 @@
  */
 
 function maxSubArray(nums) {
-    // TODO: implement
+    if(nums != null && nums.length == 1) {
+        return nums[0];
+    }
+
+    let currentSum = nums[0];
+    let runningSum = nums[0];
+    let maxSum = nums[0];
+
+    for(let index = 1; index < nums.length ; index++) {
+
+        runningSum = currentSum + nums[index];
+        if(runningSum > nums[index]) {
+            currentSum = runningSum;
+        } else {
+            currentSum = nums[index];
+        }
+        maxSum = Math.max(maxSum, currentSum)
+    }
+
+    return maxSum;
 }
 
 // Test cases
