@@ -38,6 +38,18 @@
  * ─────────────────────────────────────────────────────────────
  */
 
+/**
+ * Approach: Kadane's Algorithm (O(n) time, O(1) space)
+ *
+ * currentSum = best sum of a subarray ending exactly at the current index.
+ * maxSum     = best sum seen across all subarrays so far (the answer).
+ *
+ * At each step, decide whether to extend the previous subarray or start
+ * a new one at the current element, whichever gives a larger sum.
+ *
+ * @param {number[]} nums
+ * @returns {number} the largest sum of any contiguous subarray
+ */
 function maxSubArray(nums) {
     if(nums != null && nums.length == 1) {
         return nums[0];
@@ -50,11 +62,15 @@ function maxSubArray(nums) {
     for(let index = 1; index < nums.length ; index++) {
 
         runningSum = currentSum + nums[index];
+
+        // extend if adding to the running sum beats starting fresh here
         if(runningSum > nums[index]) {
             currentSum = runningSum;
         } else {
             currentSum = nums[index];
         }
+
+        // record the best sum seen so far, regardless of where it ends
         maxSum = Math.max(maxSum, currentSum)
     }
 
