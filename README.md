@@ -21,7 +21,7 @@ hard problem.
 - [x] [Two Sum](./problems/01_two_sum.js) — One-pass hashmap. Store `target - num` → index as you iterate; check if current num is already a stored complement. O(n) time, O(n) space.
 - [x] [Valid Anagram](./problems/02_valid_anagram.js) — Hashmap of net character counts (+1 for s, -1 for t); anagram if every count ends at 0. O(n) time, O(k) space. (Includes an alternative fixed-size array implementation.)
 - [x] [Contains Duplicate](./problems/03_contains_duplicate.js) — Single pass with a Set; return true as soon as a value is seen twice. O(n) time, O(n) space.
-- [ ] [Valid Parentheses](./problems/04_valid_parentheses.js)
+- [x] [Valid Parentheses](./problems/04_valid_parentheses.js) — Stack of opening brackets; each closing bracket must match the top of the stack, and the stack must be empty at the end. O(n) time, O(n) space.
 - [ ] [Best Time to Buy and Sell Stock](./problems/05_best_time_to_buy_sell_stock.js)
 - [ ] [Move Zeroes](./problems/06_move_zeroes.js)
 - [ ] [First Unique Character in a String](./problems/07_first_unique_character.js)
@@ -55,5 +55,5 @@ hard problem.
 
 | Status | Count |
 |--------|-------|
-| Done   | 5     |
+| Done   | 6     |
 | Total  | 24    |

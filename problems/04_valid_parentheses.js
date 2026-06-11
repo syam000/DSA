@@ -50,8 +50,69 @@
  * ─────────────────────────────────────────────────────────────
  */
 
+/**
+ * Approach: Stack of opening brackets (O(n) time, O(n) space)
+ *
+ * Push every opening bracket onto the stack. When a closing bracket is
+ * seen, it must match the bracket on top of the stack (the most
+ * recently opened, unclosed bracket) — otherwise the string is invalid.
+ *
+ * After processing all characters, the stack must be empty — any
+ * remaining opening brackets were never closed.
+ *
+ * @param {string} s
+ * @returns {boolean} true if the brackets in s are balanced and properly nested
+ */
 function isValid(s) {
-    // TODO: implement
+    if(s == null || s.length == 0)
+        return false;
+
+    let stack = [];
+
+    for (let index = 0; index < s.length; index++) {
+        const element = s[index];
+
+        if(element === '(' || element === '[' || element === '{' )
+            stack.push(element);
+        else {
+
+            let top = stack[stack.length-1];
+            switch (element) {
+                case ')':
+                    if(top === '(' ) {
+                        stack.pop();
+                    }
+                    else {
+                        return false;
+                    }
+                    break;
+                case ']':
+                     if(top === '[' ) {
+                        stack.pop();
+                    }
+                    else {
+                        return false;
+                    }
+                    break;
+                case '}':
+                     if(top === '{' ) {
+                        stack.pop();
+                    }
+                    else {
+                        return false;
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+    }
+
+    // a valid string must close every opening bracket it pushed
+    return stack.length === 0;
+
 }
 
 // Test cases
