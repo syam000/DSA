@@ -35,8 +35,30 @@
  * ─────────────────────────────────────────────────────────────
  */
 
+/**
+ * Approach: Set with early exit (O(n) time, O(n) space)
+ *
+ * Walk through nums, checking each value against a Set of values seen
+ * so far. If a value is already in the set, we've found a duplicate
+ * and can return immediately without scanning the rest of the array.
+ *
+ * @param {number[]} nums
+ * @returns {boolean} true if any value appears at least twice
+ */
 function containsDuplicate(nums) {
-    // TODO: implement
+    if(nums == null)
+        return false;
+    if(nums.length == 0)
+        return false;
+    let unique = new Set();
+
+    for (let index = 0; index < nums.length; index++) {
+        if(unique.has(nums[index]))
+            return true;
+        unique.add(nums[index]);
+
+    }
+    return false;
 }
 
 // Test cases
